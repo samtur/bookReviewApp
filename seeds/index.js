@@ -12,8 +12,21 @@ db.once('open', () => {
 // FUNCTION TO SEED DB
 const seedDB = async () => {
     await Book.deleteMany();
-    const b = new Book({ title: 'How to Kill a Mocking Bird' });
-    await b.save();
+    for (let i = 0; i < 20; i++) {
+        const random = Math.floor(Math.random() * 99);
+        const book = new Book({
+            title: `${books[random].title}`,
+            author: String,
+            genre: String,
+            country: String,
+            language: String,
+            description: String,
+            pages: Number,
+            year: Number,
+        });
+    }
+
+    await book.save();
 };
 // FUNCTION CALL
 seedDB();
