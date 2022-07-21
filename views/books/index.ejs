@@ -1,0 +1,12 @@
+<% layout('layout/boilerplate') %>
+<h1 class="text">Books</h1>
+<ul class="text">
+    <% for(let book of books){%>
+    <li>
+        <a href="/books/<%=book._id%>">
+            <%= book.title %>
+        </a>
+    </li>
+    <% } %>
+</ul>
+<a href="/books/new">Add a Book</a>

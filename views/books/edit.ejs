@@ -1,0 +1,24 @@
+<% layout('layout/boilerplate') %>
+<form class="text" action="/books/<%=book._id%>?_method=PUT" method="POST">
+    <div>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="book[title]" value="<%=book.title %>">
+    </div>
+    <div>
+        <label for="author">Author</label>
+        <input type="text" id="author" name="book[author]" value="<%=book.author %>">
+    </div>
+    <div>
+        <label for="country">Country</label>
+        <input type="text" id="country" name="book[country]" value="<%=book.country%> ">
+    </div>
+    <div>
+        <label for="language">Language</label>
+        <input type="text" id="language" name="book[language]" value="<%=book.language%> ">
+    </div>
+    <div>
+        <label for="year">Year</label>
+        <input type="number" id="year" name="book[year]" value="<%=book.year%> ">
+    </div>
+    <button>Update</button>
+</form>

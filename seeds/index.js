@@ -21,6 +21,8 @@ const seedDB = async () => {
             language: `${books[random].language}`,
             pages: `${books[random].pages}`,
             year: `${books[random].year}`,
+            image: "https://images.unsplash.com/photo-1621944190310-e3cca1564bd7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed elit eget elit sodales ultrices. In in massa eros. Vestibulum cursus eu enim vel semper. Praesent pulvinar tortor non lacus eleifend, eu convallis dui accumsan. Pellentesque vulputate lectus sit amet gravida facilisis. Proin nibh orci, auctor a cursus non, dignissim sed ipsum. Duis sed massa pharetra, euismod augue sit amet, iaculis massa.'
         })
         await book.save();
     }

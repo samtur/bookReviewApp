@@ -1,0 +1,32 @@
+<% layout('layout/boilerplate') %>
+<h1 class="text">
+    <%= book.title %>
+</h1>
+<h2 class="text">
+    <%= book.author %>
+</h2>
+<img src="<%= book.image %> " alt="">
+<p class="text">
+    <%= book.description %>
+</p>
+<h4>
+    <%= book.country %>
+</h4 class="text">
+<h4>
+    <%= book.language %>
+</h4 class="text">
+<h4>
+    Published in <%= book.year %>
+</h4>
+<p class="text">
+    <a href="/books/<%=book._id%>/edit">Edit Book</a>
+</p>
+<footer class="text">
+    <a href="/books">All Books</a>
+</footer>
+<!-- DELETE -->
+<p>
+<form class="text" action="/books/<%=book._id%>?_method=DELETE" method="POST">
+    <button>Delete</button>
+</form>
+</p>

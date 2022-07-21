@@ -14,6 +14,8 @@ const BookSchema = new Schema({
     description: String,
     pages: Number,
     year: Number,
+    image: String,
+    description: String,
 });
 
 // EXPORT
