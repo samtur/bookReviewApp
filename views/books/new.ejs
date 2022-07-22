@@ -1,25 +1,35 @@
 <% layout('layout/boilerplate') %>
-<form class="text" action="/books" method="POST">
-    <div>
-        <label for="title">Title</label>
-        <input type="text" id="title" name="book[title]">
+<div class="row">
+
+    <div class="col-6 offset-3">
+        <h1 class="text-start title">New Book</h1>
+        <form class="text" action="/books" method="POST">
+            <div>
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control mb-2" type="text" id="title" name="book[title]">
+            </div>
+            <div>
+                <label class="form-label" for="author">Author</label>
+                <input class="form-control mb-2" type="text" id="author" name="book[author]">
+            </div>
+            <div>
+                <label class="form-label" for="country">Country</label>
+                <input class="form-control mb-2" type="text" id="country" name="book[country]">
+            </div>
+            <div>
+                <label class="form-label" for="language">Language</label>
+                <input class="form-control mb-2" type="text" id="language" name="book[language]">
+            </div>
+            <div>
+                <label class="form-label" for="year">Year</label>
+                <input class="form-control mb-2" type="number" id="year" name="book[year]">
+            </div>
+            <div>
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control mb-3" name="book[description]" id="description" cols="30"
+                    rows="3"></textarea>
+            </div>
+            <button class="btn mb-3">Add Book</button>
+        </form>
     </div>
-    <div>
-        <label for="author">Author</label>
-        <input type="text" id="author" name="book[author]">
-    </div>
-    <div>
-        <label for="country">Country</label>
-        <input type="text" id="country" name="book[country]">
-    </div>
-    <div>
-        <label for="language">Language</label>
-        <input type="text" id="language" name="book[language]">
-    </div>
-    <div>
-        <label for="year">Year</label>
-        <input type="number" id="year" name="book[year]">
-    </div>
-    <button>Add Book</button>
-</form>
-<a href="/books">All Books</a>
+</div>

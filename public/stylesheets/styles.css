@@ -1,12 +1,95 @@
 .body {
-    background-color: #EAE7DC;
+    background-color: #F1FAEE;
 }
 
 .navbar {
-    background-color: #EAE7DC;
+    background-color: #457B9D;
+    border-bottom: 1px solid #1D3557;
 }
 
-.text {
-    color: #E85A4F;
+.navbar-brand {
+    color: #F1FAEE;
     font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.navbar-brand:hover {
+    color: #F1FAEE;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.title {
+    color: #1D3557;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.nav-link {
+    color: #F1FAEE;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #F1FAEE;
+    text-decoration: underline;
+}
+
+.card-img-top {
+    width: auto;
+    height: 300px;
+    object-fit: cover;
+    object-position: 50% 75%;
+    border-bottom: 1px solid #1D3557;
+}
+
+.card {
+    background-color: #A8DADC;
+    border: 2px solid #1D3557;
+    width: auto;
+    height: 420px;
+    color: #1D3557;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: #1D3557;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1D3557;
+    text-decoration: underline;
+}
+
+.form-label {
+    color: #1D3557;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+.btn {
+    background-color: #457B9D;
+    color: #F1FAEE;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #A8DADC;
+    color: #1D3557;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+.navbar-toggler {
+    color: #F1FAEE;
+    border-color: #F1FAEE;
+    outline-color: #F1FAEE;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(241, 250, 238, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
