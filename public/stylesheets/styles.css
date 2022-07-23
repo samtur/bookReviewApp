@@ -44,14 +44,29 @@
     border-bottom: 1px solid #1D3557;
 }
 
+.card-img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    object-position: 50% 75%;
+    border-bottom: 1px solid #1D3557;
+}
+
+.image-show {
+    object-fit: contain;
+}
+
 .card {
     background-color: #A8DADC;
     border: 2px solid #1D3557;
+    border-radius: 0px;
     width: auto;
     height: 420px;
     color: #1D3557;
     font-family: 'Roboto', sans-serif;
 }
+
+.card-show {}
 
 a {
     color: #1D3557;

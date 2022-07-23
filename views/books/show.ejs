@@ -1,32 +1,62 @@
 <% layout('layout/boilerplate') %>
-<h1 class="text">
-    <%= book.title %>
-</h1>
-<h2 class="text">
-    <%= book.author %>
-</h2>
-<img class="imageShow" src="<%= book.image %> " alt="">
-<p class="text">
-    <%= book.description %>
-</p>
-<h4>
-    <%= book.country %>
-</h4 class="text">
-<h4>
-    <%= book.language %>
-</h4 class="text">
-<h4>
-    Published in <%= book.year %>
-</h4>
-<p class="text">
-    <a href="/books/<%=book._id%>/edit">Edit Book</a>
-</p>
-<footer class="text">
-    <a href="/books">All Books</a>
-</footer>
-<!-- DELETE -->
-<p>
-<form class="text" action="/books/<%=book._id%>?_method=DELETE" method="POST">
-    <button>Delete</button>
-</form>
-</p>
+<!-- <div class="row">
+    <div class="col-6">
+        <img src="<%= book.image %> " class="card-img " alt="...">
+    </div>
+    <div class="card card-show col-6">
+        <div class="card-body">
+            <h5 class="card-title">
+                <%= book.title %>
+            </h5>
+            <h5 class="card-title">
+                <%= book.author %>
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+                Published in <%= book.year %>
+            </h6>
+            <p class="card-text">
+                <%= book.description %>
+            </p>
+            <h6 class="card-subtitle mb-2 text-muted"><%= book.country %></h6>
+            <h6 class="card-subtitle mb-2 text-muted"><%= book.language %></h6>
+            <div class="card-body">
+                <a class="card-link btn btn-info" href="/books/<%=book._id%>/edit">Update Book</a>
+                <form class="d-inline" action="/books/<%=book._id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="row">
+    <div class="col-4">
+        <img src="<%= book.image %> " class="img-fluid" alt="...">
+    </div>
+    <div class="col-8">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%= book.title %>
+                </h5>
+                <h5 class="card-title">
+                    <%= book.author %>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    Published in <%= book.year %>
+                </h6>
+                <p class="card-text">
+                    <%= book.description %>
+                </p>
+                <h6 class="card-subtitle mb-2 text-muted"><%= book.country %></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><%= book.language %></h6>
+                <div class="card-body">
+                    <a class="card-link btn btn-info" href="/books/<%=book._id%>/edit">Update Book</a>
+                    <form class="d-inline" action="/books/<%=book._id%>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
