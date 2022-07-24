@@ -29,9 +29,9 @@
     </div>
 </div> -->
 
-<div class="row">
-    <div class="col-4">
-        <img src="<%= book.image %> " class="img-fluid" alt="...">
+<!-- <div class="row mb-2">
+    <div class="col-4 ">
+        <img src="<%= book.image %> " class="img-fluid img-show" alt="...">
     </div>
     <div class="col-8">
         <div class="card">
@@ -57,6 +57,31 @@
                     </form>
                 </div>
             </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="row mb-2">
+    <div class="col-md-10 offset-1">
+        <div class="card-show row g-0 border rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+            <div class="col-auto d-none d-lg-block">
+                <img src="<%= book.image %> " class="img-fluid img-show" alt="...">
+            </div>
+            <div class="col p-4 d-flex flex-column position-static">
+                <h3 class="mb-1"><%= book.title %> </h3>
+                <h4 class="mb-3 text-muted"><%=book.author%></h4>
+                <div class="mb-1 text-muted">Published in <%=book.year%></div>
+                <div class="mb-1 text-muted">Country: <%=book.country%> </div>
+                <div class="mb-3 text-muted">Language: <%=book.language%></div>
+                <p class="card-text mb-2"><%=book.description %> </p>
+                <div class="mt-auto">
+                    <a class="btn mb-auto" href="/books/<%=book._id%>/edit">Update Book</a>
+                    <form class="d-inline" action="/books/<%=book._id%>?_method=DELETE" method="POST">
+                        <button class="btn">Delete</button>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

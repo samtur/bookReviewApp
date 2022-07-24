@@ -1,37 +1,45 @@
 <% layout('layout/boilerplate') %>
-
-<div class="row">
-    <div class="col-6 offset-3">
-        <h1 class="text-start title">Edit Book</h1>
-        <form class="text" action="/books/<%=book._id%>?_method=PUT" method="POST">
-            <div>
-                <label class="form-label" for="title">Title</label>
-                <input class="form-control mb-2" type="text" id="title" name="book[title]" value="<%=book.title %>">
+<div class="row mb-2">
+    <div class="col-md-6 offset-3">
+        <div class="card-show row g-0 border rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <h1 class="text-center title">Edit Book</h1>
+                <form class="text" action="/books/<%=book._id%>?_method=PUT" method="POST">
+                    <div>
+                        <label class="form-label" for="title">Title</label>
+                        <input class="form-control mb-2" type="text" id="title" name="book[title]"
+                            value="<%=book.title %>">
+                    </div>
+                    <div>
+                        <label class="form-label" for="author">Author</label>
+                        <input class="form-control mb-2" type="text" id="author" name="book[author]"
+                            value="<%=book.author %>">
+                    </div>
+                    <div>
+                        <label class="form-label" for="country">Country</label>
+                        <input class="form-control mb-2" type="text" id="country" name="book[country]"
+                            value="<%=book.country%>">
+                    </div>
+                    <div>
+                        <label class="form-label" for="language">Language</label>
+                        <input class="form-control mb-2" type="text" id="language" name="book[language]"
+                            value="<%=book.language%>">
+                    </div>
+                    <div>
+                        <label class="form-label" for="year">Year</label>
+                        <input class="form-control mb-2" type="number" id="year" name="book[year]"
+                            value="<%=book.year%>">
+                    </div>
+                    <div>
+                        <label class="form-label" for="description">Description</label>
+                        <textarea maxlength="500" class="form-control mb-4" name="book[description]" id="description"
+                            cols="30" rows="3"><%=book.description%></textarea>
+                    </div>
+                    <div class="d-grid gap-2 mt-auto">
+                        <button class="btn">Update Book</button>
+                    </div>
+                </form>
             </div>
-            <div>
-                <label class="form-label" for="author">Author</label>
-                <input class="form-control mb-2" type="text" id="author" name="book[author]" value="<%=book.author %>">
-            </div>
-            <div>
-                <label class="form-label" for="country">Country</label>
-                <input class="form-control mb-2" type="text" id="country" name="book[country]"
-                    value="<%=book.country%>">
-            </div>
-            <div>
-                <label class="form-label" for="language">Language</label>
-                <input class="form-control mb-2" type="text" id="language" name="book[language]"
-                    value="<%=book.language%>">
-            </div>
-            <div>
-                <label class="form-label" for="year">Year</label>
-                <input class="form-control mb-2" type="number" id="year" name="book[year]" value="<%=book.year%>">
-            </div>
-            <div>
-                <label class="form-label" for="description">Description</label>
-                <textarea class="form-control mb-3" name="book[description]" id="description" cols="30"
-                    rows="3"><%=book.description%></textarea>
-            </div>
-            <button class="btn mb-3">Update Book</button>
-        </form>
+        </div>
     </div>
 </div>
