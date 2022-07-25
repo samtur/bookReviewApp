@@ -16,6 +16,12 @@ const BookSchema = new Schema({
     year: Number,
     image: String,
     description: String,
+    review: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Review'
+        }
+    ]
 });
 
 // EXPORT
