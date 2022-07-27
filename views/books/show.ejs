@@ -1,67 +1,5 @@
 <% layout('layout/boilerplate') %>
-<!-- <div class="row">
-    <div class="col-6">
-        <img src="<%= book.image %> " class="card-img " alt="...">
-    </div>
-    <div class="card card-show col-6">
-        <div class="card-body">
-            <h5 class="card-title">
-                <%= book.title %>
-            </h5>
-            <h5 class="card-title">
-                <%= book.author %>
-            </h5>
-            <h6 class="card-subtitle mb-2 text-muted">
-                Published in <%= book.year %>
-            </h6>
-            <p class="card-text">
-                <%= book.description %>
-            </p>
-            <h6 class="card-subtitle mb-2 text-muted"><%= book.country %></h6>
-            <h6 class="card-subtitle mb-2 text-muted"><%= book.language %></h6>
-            <div class="card-body">
-                <a class="card-link btn btn-info" href="/books/<%=book._id%>/edit">Update Book</a>
-                <form class="d-inline" action="/books/<%=book._id%>?_method=DELETE" method="POST">
-                    <button class="btn btn-danger">Delete</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<!-- <div class="row mb-2">
-    <div class="col-4 ">
-        <img src="<%= book.image %> " class="img-fluid img-show" alt="...">
-    </div>
-    <div class="col-8">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <%= book.title %>
-                </h5>
-                <h5 class="card-title">
-                    <%= book.author %>
-                </h5>
-                <h6 class="card-subtitle mb-2 text-muted">
-                    Published in <%= book.year %>
-                </h6>
-                <p class="card-text">
-                    <%= book.description %>
-                </p>
-                <h6 class="card-subtitle mb-2 text-muted"><%= book.country %></h6>
-                <h6 class="card-subtitle mb-2 text-muted"><%= book.language %></h6>
-                <div class="card-body">
-                    <a class="card-link btn btn-info" href="/books/<%=book._id%>/edit">Update Book</a>
-                    <form class="d-inline" action="/books/<%=book._id%>?_method=DELETE" method="POST">
-                        <button class="btn btn-danger">Delete</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<div class="row mb-2">
+<div class="row mb-1">
     <div class="col-md-12">
         <div class="card-show row g-0 border rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
             <div class="col-auto d-none d-lg-block">
@@ -83,18 +21,20 @@
             </div>
             <div class="col p-4 d-flex flex-column position-static">
                 <h4 class="mb-3 text-muted">Leave a Review</h4>
-                <form class="row g-3" action="">
+                <form class="row g-3 needs-validation" novalidate action="/books/<%=book._id%>/reviews" method="POST">
                     <div class="col-12 mb-3">
                         <label class="text-muted mb-2" for="rating" class="form-label">
                             <div>Rating</div>
                         </label>
-                        <input type="range" class="form-range" min="1" max="5" name="review[rating]" id="rating">
+                        <input type="range" class="form-range" min="1" max="5" name="review[rating]" id="rating"
+                            required>
                     </div>
                     <div class="col-12 mb-5">
                         <label class="text-muted mb-2" for="form-label" form="body">
                             <div>Review</div>
                         </label>
-                        <textarea class="form-control" name="review[body]" id="" cols="30" rows="10"></textarea>
+                        <textarea class="form-control" name="review[body]" id="" cols="30" rows="10"
+                            required></textarea>
                     </div>
                     <div class="col-12 pt-1">
                         <button class="btn">Submit Review</button>
@@ -102,6 +42,26 @@
                 </form>
             </div>
         </div>
-
     </div>
 </div>
+<% for(let review of book.review) {%>
+<div class="row mb-1">
+    <div class="col-md-12">
+        <div class="card-show row g-0 border rounded overflow-hidden flex-md-row mb-2 h-md-250 position-relative">
+            <div class="col p-3 d-flex flex-column position-static">
+                <div class="mb-1">
+                    <p>
+                        Rating: <%= review.rating %>
+                    </p>
+                    <p>
+                        <%= review.body %>
+                    </p>
+                    <form action="/books/<%=book._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
+                        <button class="btn">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% } %>

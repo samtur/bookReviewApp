@@ -1,8 +1,11 @@
 // REQUIRES
 const mongoose = require('mongoose');
+const Review = require('./reviews');
 
 // SHORTENING OF SCHEMA SYNTAX
 const Schema = mongoose.Schema;
+
+
 
 // SCHEMA
 const BookSchema = new Schema({
@@ -22,6 +25,18 @@ const BookSchema = new Schema({
             ref: 'Review'
         }
     ]
+});
+
+
+// MIDDLEWARE TO DELETE
+BookSchema.post('findOneAndDelete', async function (doc) {
+    if (doc) {
+        await Review.deleteMany({
+            _id: {
+                $in: doc.review,
+            }
+        })
+    }
 });
 
 // EXPORT

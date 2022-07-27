@@ -1,0 +1,25 @@
+<% layout('layout/boilerplate') %>
+<div class="row mb-2">
+    <div class="col-xs-3 col-md-6 offset-md-3">
+        <div class="card-show row g-0 border rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+                <h1>Register</h1>
+                <form action="/register" method="POST" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label class="form-label" for="user">Username</label>
+                        <input class="form-control" type="text" id="username" name="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="email">Email</label>
+                        <input class="form-control" type="text" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="password">Password</label>
+                        <input class="form-control" type="text" id="password" name="password" required>
+                    </div>
+                    <button class="btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

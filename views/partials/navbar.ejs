@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-lg">
+<nav class="navbar sticky-top navbar-expand-lg ">
     <div class="container-fluid">
         <div class="navbar-brand p-0 ">BookClub</div>
         <button class="navbar-toggler text" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -12,5 +12,15 @@
                 <a class="nav-link" href="/books/new">New Book</a>
             </div>
         </div>
+
+        <div class="navbar-nav ms-auto d-inline-block">
+            <% if(!currentUser) {%>
+            <a href="/login" class="nav-link d-inline-block">Login</a>
+            <a href="/register" class="nav-link d-inline-block">Register</a>
+            <% } else {%>
+            <a href="/logout" class="nav-link d-inline-block">Logout</a>
+            <% } %>
+        </div>
+
     </div>
 </nav>
