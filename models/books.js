@@ -19,6 +19,10 @@ const BookSchema = new Schema({
     year: Number,
     image: String,
     description: String,
+    creator: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     review: [
         {
             type: Schema.Types.ObjectId,

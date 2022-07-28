@@ -16,6 +16,7 @@ const seedDB = async () => {
         const random = Math.floor(Math.random() * 99);
         const book = new Book({
             title: `${books[random].title}`,
+            creator: '62e0de6f532fb04b301ee581',
             author: `${books[random].author}`,
             country: `${books[random].country}`,
             language: `${books[random].language}`,
