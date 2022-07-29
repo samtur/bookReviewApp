@@ -11,6 +11,11 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 
+// DOTENV REQUIREMENTS
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+
 // ROUTE REQUIREMENTS
 const booksRoutes = require('./routes/books');
 const reviewsRoutes = require('./routes/reviews');
@@ -48,6 +53,7 @@ const sessionConfig = {
         httpOnly: true,
     }
 }
+
 app.use(session(sessionConfig));
 
 // FLASH

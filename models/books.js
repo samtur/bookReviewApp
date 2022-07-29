@@ -11,13 +11,17 @@ const Schema = mongoose.Schema;
 const BookSchema = new Schema({
     title: String,
     author: String,
+    image:
+    {
+        path: String,
+        filename: String
+    },
     genre: String,
     country: String,
     language: String,
     description: String,
     pages: Number,
     year: Number,
-    image: String,
     description: String,
     creator: {
         type: Schema.Types.ObjectId,

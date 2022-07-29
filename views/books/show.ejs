@@ -2,8 +2,8 @@
 <div class="row mb-1">
     <div class="col-md-12">
         <div class="card-show row g-0 border rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
-            <div class="col-auto d-none d-lg-block">
-                <img src="<%= book.image %> " class="img-fluid img-show" alt="...">
+            <div class="col-4 d-none d-xl-block">
+                <img src="<%=book.image.path%>" class="img-fluid card-img" alt="...">
             </div>
             <div class="col p-4 d-flex flex-column position-static">
                 <h3 class="mb-1"><%= book.title %> </h3>
@@ -26,8 +26,8 @@
             <div class="col p-4 d-flex flex-column position-static">
                 <h4 class="mb-2 text-muted">Leave a Review:</h4>
                 <p id="status" class="d-none my-0 text-danger">Please select a rating!</p>
-                <form class="row g-3 needs-validation reviewForm" novalidate action="/books/<%=book._id%>/reviews"
-                    method="POST">
+                <form class="row mt-auto g-3 needs-validation reviewForm" novalidate
+                    action="/books/<%=book._id%>/reviews" method="POST">
                     <div class="col-12 mb-0">
                         <fieldset class="starability-basic">
                             <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="0"
@@ -48,10 +48,10 @@
                         <label class="text-muted mb-2" for="form-label" form="body">
                             <div>Review</div>
                         </label>
-                        <textarea class="form-control" name="review[body]" id="" cols="30" rows="10"
+                        <textarea class="form-control" name="review[body]" id="" cols="30" rows="13"
                             required></textarea>
                     </div>
-                    <div class="col-12 pt-1">
+                    <div class="col-12 pt-1 mt-auto">
                         <button class="btn">Submit Review</button>
                     </div>
                 </form>

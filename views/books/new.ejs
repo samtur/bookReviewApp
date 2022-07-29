@@ -4,28 +4,32 @@
         <div class="card-show row g-0 border rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static">
                 <h1 class="text-center title">New Book</h1>
-                <form class="needs-validation" novalidate action="/books" method="POST">
-                    <div>
+                <form class="needs-validation" novalidate action="/books" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
                         <label class="form-label" for="title">Title</label>
                         <input class="form-control mb-2" type="text" id="title" name="book[title]" required>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <label class="form-label" for="author">Author</label>
                         <input class="form-control mb-2" type="text" id="author" name="book[author]" required>
                     </div>
-                    <div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Book Cover Image</label>
+                        <input class="form-control" type="file" id="image" name="image">
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label" for="country">Country</label>
                         <input class="form-control mb-2" type="text" id="country" name="book[country]" required>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <label class="form-label" for="language">Language</label>
                         <input class="form-control mb-2" type="text" id="language" name="book[language]" required>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <label class="form-label" for="year">Year</label>
                         <input class="form-control mb-2" type="number" id="year" name="book[year]" required>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <label class="form-label" for="description">Description</label>
                         <textarea class="form-control mb-4" name="book[description]" maxlength="300" id="description"
                             cols="30" rows="3" required wrap="hard"></textarea>

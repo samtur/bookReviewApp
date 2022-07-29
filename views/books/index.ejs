@@ -4,7 +4,7 @@
     <% for (let book of books){%>
     <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
         <div class="card" style="width: 18rem;">
-            <img src="<%= book.image %>" class="card-img-top" alt="...">
+            <img src="<%=book.image.path%>" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><a href="/books/<%=book._id%>">
                         <%= book.title %>

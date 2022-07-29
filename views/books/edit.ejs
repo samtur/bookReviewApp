@@ -4,33 +4,38 @@
         <div class="card-show row g-0 border rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static">
                 <h1 class="text-center title">Edit Book</h1>
-                <form class="needs-validation" novalidate action="/books/<%=book._id%>?_method=PUT" method="POST">
-                    <div>
+                <form class="needs-validation" novalidate action="/books/<%=book._id%>?_method=PUT" method="POST"
+                    enctype="multipart/form-data">
+                    <div class="mb-3">
                         <label class="form-label" for="title">Title</label>
                         <input class="form-control mb-2" type="text" id="title" name="book[title]"
                             value="<%=book.title %>" required>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <label class="form-label" for="author">Author</label>
                         <input class="form-control mb-2" type="text" id="author" name="book[author]"
                             value="<%=book.author %>" required>
                     </div>
-                    <div>
+                    <div class="mb-3">
+                        <label class="form-label" for="image">Update Book Cover Image</label>
+                        <input class="form-control" type="file" name="image" id="image">
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label" for="country">Country</label>
                         <input class="form-control mb-2" type="text" id="country" name="book[country]"
                             value="<%=book.country%>" required>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <label class="form-label" for="language">Language</label>
                         <input class="form-control mb-2" type="text" id="language" name="book[language]"
                             value="<%=book.language%>" required>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <label class="form-label" for="year">Year</label>
                         <input class="form-control mb-2" type="number" id="year" name="book[year]"
                             value="<%=book.year%>" required>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <label class="form-label" for="description">Description</label>
                         <textarea maxlength="500" class="form-control mb-4" name="book[description]" id="description"
                             cols="30" rows="3" required><%=book.description%></textarea>
