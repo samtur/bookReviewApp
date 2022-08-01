@@ -13,6 +13,14 @@
             </div>
         </div>
 
+        <div class="cardSearch p-2">
+            <form action="/books" method="GET" class="d-flex">
+                <input type="search" name="search" placeholder="Book search..." class="form-control "
+                    aria-label="Search">
+                <button class="btn" type="submit">Search</button>
+            </form>
+        </div>
+
         <div class="navbar-nav ms-auto d-inline-block">
             <% if(!currentUser) {%>
             <a href="/login" class="nav-link d-inline-block">Login</a>

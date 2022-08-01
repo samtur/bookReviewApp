@@ -61,6 +61,13 @@
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
+.cardSearch {
+    width: auto;
+    height: auto;
+    color: #001858;
+    font-family: 'Roboto', sans-serif;
+}
+
 .card-show {
     background-color: #fef6e4;
     color: #001858;
@@ -118,3 +125,33 @@ a:hover {
 .reviewForm {
     height: 100%;
 }
+
+.home {
+    height: 75vh;
+}
+
+.homeBackground {
+    height: 100vh;
+    background-image: linear-gradient(rgba(254, 246, 228, 0.1), rgba(254, 246, 228, 0.1)),
+        url('https://images.unsplash.com/photo-1492052722242-2554d0e99e3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.homeText {
+    color: #001858;
+}
+
+.text {
+    color: #001858;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.searchError {
+    position: absolute;
+    height: 75vh;
+    color: #001858;
+    font-family: 'Roboto', sans-serif;
+}
+

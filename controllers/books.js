@@ -2,9 +2,20 @@ const Book = require('../models/books');
 const { cloudinary } = require('../cloudinary');
 
 module.exports.index = async (req, res, next) => {
-    const books = await Book.find({});
-    res.render('books/index', { books });
+    let noMatch = null;
+    if (req.query.search) {
+        const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+        const books = await Book.find({ title: regex });
+        if (books.length < 1) {
+            noMatch = "Sorry we couldn't find anything, please try again..."
+        }
+        return res.render('books/index', { books, noMatch });
+    } else {
+        const books = await Book.find({});
+        res.render('books/index', { books, noMatch });
+    }
 };
+
 
 module.exports.renderNewForm = (req, res) => {
     res.render('books/new');
@@ -57,4 +68,8 @@ module.exports.showBook = async (req, res) => {
         return res.redirect('/books');
     }
     res.render('books/show', { book });
+};
+
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };

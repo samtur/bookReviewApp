@@ -7,9 +7,11 @@
                     <h4 class="alert-heading">
                         <%= err.message %>
                     </h4>
+                    <% if(process.env.NODE_ENV !== 'production') {%>
                     <p class="card-text mb-2">
                         <%= err.stack %>
                     </p>
+                    <% } %>
                 </div>
             </div>
         </div>
